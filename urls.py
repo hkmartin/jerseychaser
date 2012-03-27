@@ -6,7 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'jersey.chaser.views.homepage', name='home'),
-    # url(r'^jersey/', include('jersey.foo.urls')),
+    url(r'^jersey/(?P<chaser_id>\d+)/', 'jersey.chaser.views.detail'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -14,6 +14,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
-
 
 

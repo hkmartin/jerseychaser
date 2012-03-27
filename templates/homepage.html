@@ -1,6 +1,6 @@
 {{ greeting }}
 
-{% for object in chaser %}
-{{ object  }}
-{% endfor %}
+<ul>{% for object in chaser %}
+<li><a href="{{ object.get_absolute_url }}">{{ object  }}</a></li>
+{% endfor %}</ul>
 

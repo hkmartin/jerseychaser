@@ -17,3 +17,9 @@ def homepage(request):
         'chaser' : chaser,
         'greeting': greeting,
     })
+
+def detail(request, chaser_id):
+    chaser =  Chaser.objects.get(id=chaser_id)
+    return render_to_response('detail.html',{ 
+        'chaser' : chaser,
+    })

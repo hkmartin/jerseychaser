@@ -8,6 +8,9 @@ class Chaser(models.Model):
     picture = models.ImageField(upload_to="photos/", blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    def get_absolute_url(self):
+        return "/jersey/%i" % self.id
+
     def __unicode__(self):
         return self.name
 
@@ -18,3 +21,7 @@ class Report(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return "report on %s from %s" % (self.chaser.name, self.user.username)
+
+
+
+

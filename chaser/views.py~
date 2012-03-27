@@ -12,8 +12,14 @@ from jersey.chaser.models import Chaser
 
 def homepage(request):
     greeting = "Hi there!"
-    chase = Chaser.objects.all()
+    chaser = Chaser.objects.all()
     return render_to_response('homepage.html',{ 
-        'chase' : chaser,
+        'chaser' : chaser,
         'greeting': greeting,
+    })
+
+def detail(request, chaser_id):
+    chaser =  chaser.objects.get(id=chaser_id)
+    return render_to_response('detail.html',{ 
+        'chaser' : chaser,
     })
